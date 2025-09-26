@@ -41,3 +41,6 @@ Thumbs.db
 # SASS
 .sass-cache/
 *.css.map
+
+# Compiled CSS (Parcel handles SCSS compilation)
+src/styles/css/

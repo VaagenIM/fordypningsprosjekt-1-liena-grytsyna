@@ -1,4 +1,4 @@
-// Basic styling to show the page is working
+// Basic styling to test SCSS compilation
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
@@ -27,4 +27,5 @@ h1 {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
