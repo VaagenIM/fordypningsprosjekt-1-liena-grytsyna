@@ -1,0 +1,30 @@
+{
+  "name": "fordypningsprosjekt-1-liena-grytsyna",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "sass --watch src/styles/scss:src/styles/css",
+    "sass:build": "sass src/styles/scss/main.scss:src/styles/css/main.css --no-source-map --style=compressed",
+    "start": "parcel src/index.html --port 3000",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VaagenIM/fordypningsprosjekt-1-liena-grytsyna.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/VaagenIM/fordypningsprosjekt-1-liena-grytsyna/issues"
+  },
+  "homepage": "https://github.com/VaagenIM/fordypningsprosjekt-1-liena-grytsyna#readme",
+  "dependencies": {
+    "sass": "^1.93.2"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  }
+}
