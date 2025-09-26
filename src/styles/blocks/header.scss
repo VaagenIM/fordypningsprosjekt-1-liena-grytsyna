@@ -1,0 +1,117 @@
+// Header and navigation
+.header {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.nav {
+  @include flex-between;
+  padding: $spacing-md 0;
+  
+  &__brand {
+    flex-shrink: 0;
+  }
+  
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $primary-color;
+    text-decoration: none;
+  }
+  
+  &__menu {
+    @include flex-center;
+    gap: $spacing-lg;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    @include tablet {
+      position: fixed;
+      top: 70px;
+      left: -100%;
+      width: 100%;
+      height: calc(100vh - 70px);
+      background-color: white;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: $spacing-xl;
+      transition: left $transition-normal;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  &__link {
+    color: $dark-color;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color $transition-fast;
+    
+    &:hover {
+      color: $primary-color;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $primary-color;
+      transition: width $transition-fast;
+    }
+    
+    &:hover::after {
+      width: 100%;
+    }
+  }
+  
+  &--open &__menu {
+    @include tablet {
+      left: 0;
+    }
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+  padding: $spacing-xs;
+  
+  @include tablet {
+    display: flex;
+  }
+  
+  span {
+    width: 25px;
+    height: 3px;
+    background-color: $dark-color;
+    transition: all $transition-normal;
+    border-radius: 2px;
+  }
+  
+  &--active {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
+    }
+  }
+}

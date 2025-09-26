@@ -1,0 +1,64 @@
+// Utility classes
+
+// Layout utilities
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+.flex {
+  display: flex;
+  
+  &--center { @include flex-center; }
+  &--between { @include flex-between; }
+  &--column { flex-direction: column; }
+  &--wrap { flex-wrap: wrap; }
+}
+
+.grid {
+  display: grid;
+  gap: $spacing-md;
+  
+  &--2-cols { grid-template-columns: repeat(2, 1fr); }
+  &--3-cols { grid-template-columns: repeat(3, 1fr); }
+  &--4-cols { grid-template-columns: repeat(4, 1fr); }
+  
+  @include tablet {
+    &--2-cols,
+    &--3-cols,
+    &--4-cols {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// Spacing utilities
+.mt { &-sm { margin-top: $spacing-sm; } &-md { margin-top: $spacing-md; } &-lg { margin-top: $spacing-lg; } }
+.mb { &-sm { margin-bottom: $spacing-sm; } &-md { margin-bottom: $spacing-md; } &-lg { margin-bottom: $spacing-lg; } }
+.pt { &-sm { padding-top: $spacing-sm; } &-md { padding-top: $spacing-md; } &-lg { padding-top: $spacing-lg; } }
+.pb { &-sm { padding-bottom: $spacing-sm; } &-md { padding-bottom: $spacing-md; } &-lg { padding-bottom: $spacing-lg; } }
+
+// Text utilities
+.text {
+  &-center { text-align: center; }
+  &-left { text-align: left; }
+  &-right { text-align: right; }
+  &-primary { color: $primary-color; }
+  &-secondary { color: $secondary-color; }
+  &-muted { color: $gray-color; }
+}
+
+// Visibility utilities
+.hidden { display: none; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

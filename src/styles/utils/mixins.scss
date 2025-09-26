@@ -1,0 +1,63 @@
+// Mixins for common patterns
+
+// Flexbox utilities
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Responsive breakpoints
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+// Button mixin
+@mixin button-style($bg-color: $primary-color, $text-color: white) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all $transition-normal;
+  
+  &:hover {
+    background-color: darken($bg-color, 10%);
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Card shadow
+@mixin card-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow $transition-normal;
+  
+  &:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+}
