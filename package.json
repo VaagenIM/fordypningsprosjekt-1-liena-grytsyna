@@ -1,34 +1,35 @@
 {
-  "name": "skolekantina",
+  "name": "fordypningsprosjekt-1-liena-grytsyna",
   "version": "1.0.0",
   "description": "",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel --port 3000 --open",
-    "dev": "parcel --port 8000 --open",
-    "build": "parcel build --dist-dir dist --public-url ./",
-    "lint": "eslint src/scripts/**/*.js",
-    "lint:fix": "eslint src/scripts/**/*.js --fix",
+    "start": "parcel src/index.html --port 3000 --open",
+    "dev": "parcel src/index.html --port 8000 --open",
+    "build": "parcel build src/index.html --dist-dir dist --public-url ./",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "clean": "rimraf dist .parcel-cache",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass src/styles/main.scss:../dist/main.css",
-    "sass:watch": "sass --watch src/styles/main.scss:../dist/main.css"
+    "sass:build": "sass src/index.scss:dist/index.css",
+    "sass:watch": "sass --watch src/index.scss:dist/index.css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liena-grytsyna/Skolekantina.git"
+    "url": "git+https://github.com/liena-grytsyna/fordypningsprosjekt-1-liena-grytsyna.git"
   },
+  "homepage": "https://github.com/liena-grytsyna/fordypningsprosjekt-1-liena-grytsyna#readme",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/liena-grytsyna/Skolekantina/issues"
+    "url": "https://github.com/VaagenIM/fordypningsprosjekt-1-liena-grytsyna/issues"
   },
-  "homepage": "https://github.com/liena-grytsyna/Skolekantina#readme",
   "devDependencies": {
     "@eslint/js": "^9.36.0",
     "@eslint/json": "^0.13.2",
+    "@parcel/transformer-sass": "^2.16.0",
     "eslint": "^8.57.1",
     "globals": "^16.4.0",
     "live-server": "^1.2.2",

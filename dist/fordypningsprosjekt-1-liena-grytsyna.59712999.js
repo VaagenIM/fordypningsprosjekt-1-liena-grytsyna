@@ -715,6 +715,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"4M6V8":[function(require,module,exports,__globalThis) {
 
-},{}]},["jOxZU","4M6V8"], "4M6V8", "parcelRequire0431", {})
+},{}]},["jOxZU","4M6V8"], "4M6V8", "parcelRequire7c2d", {})
 
 //# sourceMappingURL=fordypningsprosjekt-1-liena-grytsyna.59712999.js.map
