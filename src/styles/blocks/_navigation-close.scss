@@ -5,9 +5,10 @@
   align-items: center;
   justify-content: center;
   &__icon {
+    grid-column: 1 / 2;
     width: 12.73;
     height: 12.73;
-    top: 5.64px;
-    left: 5.64px;
+    background-image: url(/src/images/logos/close-nav.svg);
+    background-repeat: no-repeat;
   }
 }
