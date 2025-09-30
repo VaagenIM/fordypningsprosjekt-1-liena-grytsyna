@@ -1,5 +1,12 @@
-@use '../utils/mixins' as *;
+@use '../utils/_mixins' as *;
+@use '../utils/_vars' as *;
 
+
+.body {
+  font-family: $font-primary;
+  background-color: $bg-color !important;
+  color: $c-gray;
+}
 .main {
   @include grid;
 

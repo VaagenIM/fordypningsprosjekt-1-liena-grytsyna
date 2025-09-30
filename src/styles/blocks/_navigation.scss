@@ -1,5 +1,5 @@
-@use '../utils/vars' as *;
-@use '../utils/mixins' as *;
+@use '../utils/_vars' as *;
+@use '../utils/_mixins' as *;
 
 .navigation {
   position: absolute; // zamiast absolute

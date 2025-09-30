@@ -1,3 +1,6 @@
+@use "../utils/_mixins" as m;
+@use '../utils/_vars' as *;
+
 .title {
   &__header {
     font-weight: 400;
@@ -8,7 +11,7 @@
     text-transform: uppercase;
     padding-top: 32px;
 
-    @include for-desktop {
+    @include m.for-desktop {
       font-size: 130px;
       display: flex;
       align-items: center;
@@ -41,7 +44,7 @@
     letter-spacing: -5%;
     text-transform: uppercase;
 
-    @include for-desktop {
+    @include m.for-desktop {
       font-size: 72px;
     }
 
@@ -62,18 +65,14 @@
     text-transform: uppercase;
     color: #fff;
 
-    @include for-tablet {
+    @include m.for-tablet {
       padding-bottom: 30px;
     }
 
-    @include for-desktop {
+    @include m.for-desktop {
       font-size: 72px;
       width: 540px;
       white-space: nowrap;
     }
   }
-}
-
-.title:not(.title__product):hover {
-  color: #f9512e;
 }

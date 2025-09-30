@@ -207,11 +207,11 @@
       });
     }
   }
-})({"jOxZU":[function(require,module,exports,__globalThis) {
+})({"4nhOL":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
-var HMR_SERVER_PORT = 3000;
+var HMR_SERVER_PORT = 8000;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
@@ -715,6 +715,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"4M6V8":[function(require,module,exports,__globalThis) {
 
-},{}]},["jOxZU","4M6V8"], "4M6V8", "parcelRequire7c2d", {})
+},{}]},["4nhOL","4M6V8"], "4M6V8", "parcelRequire7c2d", {})
 
 //# sourceMappingURL=fordypningsprosjekt-1-liena-grytsyna.59712999.js.map
