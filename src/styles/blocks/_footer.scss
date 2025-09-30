@@ -1,7 +1,7 @@
 @use '../utils/_mixins' as *;
 
 .footer {
-  background-color: black;
+  background-color: #1c1a26;
   padding-top: 60px;
   padding-bottom: 80px;
   display: flex;
@@ -58,7 +58,7 @@
       @include for-desktop {
         grid-column: 5/9;
         grid-row: 1;
-        white-space: nowrap; // ignoruje <br>, tekst w jednej linii
+        white-space: nowrap;
       }
     }
 
