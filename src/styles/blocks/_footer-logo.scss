@@ -6,10 +6,9 @@ $delay-step: 0.15s;  // шаг задержки для волны
 $jump-time: 1s;      // время самого прыжка
 $rest-time: 1s;      // пауза после прыжка
 
-.navigation-logo {
+.footer--logo {
   margin-left: 10px;
-  grid-column: 1 / -1;
-  color: $text-color;
+  color: white;
   font-weight: 700;
   font-size: 24px;
 
