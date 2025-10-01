@@ -1,3 +1,11 @@
+@use '../utils/_vars' as *;
+
+.navigation-menu {
+  margin-right: 20px;
+    &__link {
+      color: $text-color;
+    }
+  }
 .links {
   &__menu {
     &--ul {

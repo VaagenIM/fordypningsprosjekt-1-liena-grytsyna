@@ -619,6 +619,13 @@ body {
   transform: translateY(0);
 }
 
+.navigation-menu {
+  margin-right: 20px;
+}
+.navigation-menu__link {
+  color: #1c1a26;
+}
+
 .links__menu--ul {
   display: flex;
   flex-direction: column;
