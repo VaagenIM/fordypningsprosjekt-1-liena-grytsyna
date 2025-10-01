@@ -1,8 +1,8 @@
 @use '../utils/_vars' as *;
 
 .navigation-menu {
-  margin-right: 20px;
     &__link {
+      margin-right: 20px;
       color: $text-color;
     }
   }
