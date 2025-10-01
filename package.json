@@ -11,8 +11,8 @@
     "lint:fix": "eslint . --fix",
     "clean": "rimraf dist .parcel-cache",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass:build": "sass src/index.scss:src/css/index.css",
-    "sass:watch": "sass --watch src/index.scss:src/css/index.css"
+    "sass:build": "sass src/styles/index.scss:src/css/index.css src/styles/admin.scss:src/css/admin.css",
+    "sass:watch": "sass --watch src/styles/index.scss:src/css/index.css src/styles/admin.scss:src/css/admin.css"
   },
   "repository": {
     "type": "git",

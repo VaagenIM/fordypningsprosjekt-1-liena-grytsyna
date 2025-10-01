@@ -1,0 +1,14 @@
+{
+  "monday": [],
+  "tuesday": [],
+  "wednesday": [],
+  "thursday": [],
+  "friday": [
+    {
+      "description": "енен",
+      "image": "",
+      "name": "енен",
+      "price": "56"
+    }
+  ]
+}

@@ -1,13 +1,16 @@
+@use './styles/base/reset' as *;
+@use './styles/base/body' as *;
+
 // utils
 
-@use './styles/utils/reset' as *;
+
 @use './styles/utils/fonts' as *;
 @use './styles/utils/extends' as *;
 @use './styles/utils/vars' as *;
 @use './styles/utils/mixins' as *;
 
 // body
-@use './styles/blocks/body' as *;
+
 @use './styles/blocks/text' as *;
 @use './styles/blocks/title' as *;
 @use './styles/blocks/image' as *;
