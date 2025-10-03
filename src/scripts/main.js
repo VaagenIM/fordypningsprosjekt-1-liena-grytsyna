@@ -65,7 +65,7 @@ function renderWeeklyMenu(menu) {
 
 // Entry script
 document.addEventListener('DOMContentLoaded', async () => {
-  console.log("App loaded");
+  console.log('App loaded');
   
   // Загрузка и рендеринг меню
   const menu = await fetchMenu();

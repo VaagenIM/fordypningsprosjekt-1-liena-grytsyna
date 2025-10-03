@@ -1,42 +1,42 @@
 {
   "monday": [
     {
-      "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
-      "image": "/assets/uploads/Grate-borsch_1_1_0e8d02b6b8ae4f05aa5962f586575106.jpg",
       "name": "Borch",
-      "price": "800"
+      "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
+      "price": "800",
+      "image": "/assets/uploads/Grate-borsch_1_1_1ca4814e990d40a7a3ceef96cd917129.jpg"
     }
   ],
   "tuesday": [
     {
-      "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
-      "image": "/assets/uploads/Grate-borsch_1_1_eefd6564dd1048d98685723efd31fb45.jpg",
       "name": "Borch",
-      "price": "700"
+      "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
+      "price": "700",
+      "image": "/assets/uploads/Grate-borsch_1_1_eac61c94acba4f78bb48d016afde0a6a.jpg"
     }
   ],
   "wednesday": [
     {
-      "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
-      "image": "/assets/uploads/Grate-borsch_1_1_960024b657ae4a49b060aac19b811464.jpg",
       "name": "Borch",
-      "price": "600"
+      "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
+      "price": "600",
+      "image": "/assets/uploads/Grate-borsch_1_1_74ea254eadc94c32a9aa070a94f445dc.jpg"
     }
   ],
   "thursday": [
     {
-      "name": "Borch",
       "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
-      "price": "670",
-      "image": "/assets/uploads/Grate-borsch_1_1_f0f5fe5f22304bc38fef5b47f2f60dbf.jpg"
+      "image": "/assets/uploads/Grate-borsch_1_1_f0f5fe5f22304bc38fef5b47f2f60dbf.jpg",
+      "name": "Borch",
+      "price": "670"
     }
   ],
   "friday": [
     {
-      "name": "Borch",
       "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
-      "price": "200",
-      "image": "/assets/uploads/Grate-borsch_1_1_4748f57ca925463bbdbb364a05cb7549.jpg"
+      "image": "/assets/uploads/Grate-borsch_1_1_4748f57ca925463bbdbb364a05cb7549.jpg",
+      "name": "Borch",
+      "price": "200"
     }
   ]
 }
