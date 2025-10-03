@@ -294,7 +294,8 @@ body {
   width: 288px;
   height: 356px;
   border-radius: 8px;
-  background-size: contain;
+  object-fit: cover;
+  object-position: center;
 }
 @media (min-width: 768px) {
   .image__main {
@@ -1020,5 +1021,3 @@ body {
     transform: translateY(0);
   }
 }
-
-/*# sourceMappingURL=index.css.map */

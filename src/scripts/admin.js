@@ -14,7 +14,47 @@ async function saveMenu(menuData) {
 	return await res.json();
 }
 
+async function uploadImage(file) {
+	// If we got a File object
+	if (file instanceof File) {
+		const formData = new FormData();
+		formData.append('file', file);
+		
+		const res = await fetch('/api/upload', {
+			method: 'POST',
+			body: formData
+		});
+		
+		if (!res.ok) {
+			throw new Error('Failed to upload image');
+		}
+		
+		const data = await res.json();
+		return data.url;
+	} 
+	// If we got base64 data
+	else if (typeof file === 'string' && file.startsWith('data:')) {
+		const res = await fetch('/api/upload', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ image: file })
+		});
+		
+		if (!res.ok) {
+			throw new Error('Failed to upload image');
+		}
+		
+		const data = await res.json();
+		return data.url;
+	}
+	
+	return null;
+}
+
 // --- State ---
+const WEEKDAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
 let menuData = {
 	monday: [],
 	tuesday: [],
@@ -48,7 +88,7 @@ function renderMenuForDay(day) {
 }
 
 function renderAllDays() {
-	['monday','tuesday','wednesday','thursday','friday'].forEach(renderMenuForDay);
+	WEEKDAYS.forEach(renderMenuForDay);
 }
 
 function showForm(day, item = null, idx = null) {
@@ -60,7 +100,50 @@ function showForm(day, item = null, idx = null) {
 	form.description.value = item ? item.description : '';
 	form.price.value = item ? item.price : '';
 	form.image.value = item ? item.image : '';
+	
+	// Reset file input and preview
+	const fileInput = document.getElementById('item-image-file');
+	if (fileInput) {
+		fileInput.value = '';
+		document.querySelector('.selected-file-name').textContent = 'No file chosen';
+	}
+	
+	// Show image preview if there's an image URL
+	const imagePreview = document.querySelector('.image-preview');
+	const previewImg = document.getElementById('image-preview');
+	if (item && item.image) {
+		previewImg.src = item.image;
+		imagePreview.classList.remove('hidden');
+	} else {
+		imagePreview.classList.add('hidden');
+	}
+	
 	formTemplate.classList.remove('hidden');
+}
+
+// Setup image preview functionality
+function setupImagePreview() {
+	const fileInput = document.getElementById('item-image-file');
+	const imagePreview = document.querySelector('.image-preview');
+	const previewImg = document.getElementById('image-preview');
+	const fileNameSpan = document.querySelector('.selected-file-name');
+	
+	fileInput.addEventListener('change', function() {
+		if (this.files && this.files[0]) {
+			const file = this.files[0];
+			fileNameSpan.textContent = file.name;
+			
+			const reader = new FileReader();
+			reader.onload = function(e) {
+				previewImg.src = e.target.result;
+				imagePreview.classList.remove('hidden');
+			}
+			reader.readAsDataURL(file);
+		} else {
+			fileNameSpan.textContent = 'No file chosen';
+			imagePreview.classList.add('hidden');
+		}
+	});
 }
 
 function hideForm() {
@@ -71,9 +154,18 @@ function hideForm() {
 document.addEventListener('DOMContentLoaded', async () => {
 	// Загрузка меню
 	menuData = await fetchMenu();
+	
 	// Если пусто, инициализируем
-	menuData = Object.assign({monday:[],tuesday:[],wednesday:[],thursday:[],friday:[]}, menuData);
+	const emptyMenu = WEEKDAYS.reduce((obj, day) => {
+		obj[day] = [];
+		return obj;
+	}, {});
+	menuData = Object.assign(emptyMenu, menuData);
+	
 	renderAllDays();
+	
+	// Setup image preview functionality
+	setupImagePreview();
 
 	// Переключение вкладок
 	document.querySelectorAll('.day-tab').forEach(btn => {
@@ -103,24 +195,53 @@ document.addEventListener('DOMContentLoaded', async () => {
 	document.querySelector('.cancel-btn').addEventListener('click', hideForm);
 
 	// Сохранение блюда из формы
-	document.querySelector('.menu-item-form').addEventListener('submit', e => {
+	document.querySelector('.menu-item-form').addEventListener('submit', async e => {
 		e.preventDefault();
 		const form = e.target;
 		const day = form.day.value;
 		const idx = form.itemId.value;
-		const item = {
-			name: form.name.value,
-			description: form.description.value,
-			price: form.price.value,
-			image: form.image.value
-		};
-		if (idx === '') {
-			menuData[day].push(item);
-		} else {
-			menuData[day][idx] = item;
+		
+		// Show loading indicator
+		const saveBtn = form.querySelector('.save-btn');
+		const originalBtnText = saveBtn.textContent;
+		saveBtn.disabled = true;
+		saveBtn.textContent = 'Saving...';
+		
+		try {
+			let imageUrl = form.image.value;
+			const fileInput = document.getElementById('item-image-file');
+			
+			// If a file was selected, upload it
+			if (fileInput.files && fileInput.files[0]) {
+				const uploadedUrl = await uploadImage(fileInput.files[0]);
+				if (uploadedUrl) {
+					imageUrl = uploadedUrl;
+				}
+			}
+			
+			const item = {
+				name: form.name.value,
+				description: form.description.value,
+				price: form.price.value,
+				image: imageUrl
+			};
+			
+			if (idx === '') {
+				menuData[day].push(item);
+			} else {
+				menuData[day][idx] = item;
+			}
+			
+			renderMenuForDay(day);
+			hideForm();
+		} catch (error) {
+			console.error('Error saving menu item:', error);
+			alert('Failed to save menu item: ' + error.message);
+		} finally {
+			// Restore button state
+			saveBtn.disabled = false;
+			saveBtn.textContent = originalBtnText;
 		}
-		renderMenuForDay(day);
-		hideForm();
 	});
 
 	// Edit/Delete кнопки

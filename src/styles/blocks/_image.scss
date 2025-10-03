@@ -14,7 +14,8 @@
     width: 288px;
     height: 356px;
     border-radius: 8px;
-    background-size: contain;
+    object-fit: cover;
+    object-position: center;
 
     @include for-tablet {
       width: 328px;

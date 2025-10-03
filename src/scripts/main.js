@@ -5,46 +5,76 @@ async function fetchMenu() {
   return await res.json();
 }
 
-function createProductCard(item, idx) {
-  const div = document.createElement('div');
-  // добавляем модификатор main__product--N (от 1 до 6, далее по кругу)
-  const mod = (idx % 6) + 1;
-  div.className = `main__product product main__product--${mod}`;
-  div.innerHTML = `
-    <img src="${item.image || ''}" class="main__image image image__main" alt="#" />
-    <h3 class="product__title title title__product">${item.name || ''}</h3>
-    <p class="product__text text text__product">${item.description || ''}</p>
-    <div class="product__price">${item.price ? item.price + ' NOK' : ''}</div>
-  `;
-  return div;
+// Функция обновления карточки продукта
+function updateProductCard(productElement, item) {
+  // Обновляем изображение
+  const img = productElement.querySelector('img');
+  if (img) img.src = item.image || '';
+  
+  // Обновляем название
+  const title = productElement.querySelector('.product__title');
+  if (title) title.textContent = item.name || '';
+  
+  // Обновляем описание
+  const description = productElement.querySelector('.product__text');
+  if (description) description.textContent = item.description || '';
+  
+  // Добавляем цену, если её ещё нет
+  if (!productElement.querySelector('.product__price')) {
+    const priceDiv = document.createElement('div');
+    priceDiv.className = 'product__price';
+    priceDiv.textContent = item.price ? item.price + ' NOK' : '';
+    productElement.appendChild(priceDiv);
+  } else {
+    const priceDiv = productElement.querySelector('.product__price');
+    priceDiv.textContent = item.price ? item.price + ' NOK' : '';
+  }
 }
 
+// Константа с днями недели
+const WEEKDAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+
+// Функция, отображающая меню, заменяя содержимое существующих блоков
 function renderWeeklyMenu(menu) {
-  const container = document.getElementById('weekly-menu');
-  container.innerHTML = '';
-  const days = ['monday','tuesday','wednesday','thursday','friday'];
-  days.forEach(day => {
+  // Получаем все карточки продуктов
+  const productCards = document.querySelectorAll('.main__product');
+  
+  // Если блоков недостаточно для всех блюд, будем использовать только доступные
+  let cardIndex = 0;
+  
+  // Обходим все дни недели
+  WEEKDAYS.forEach(day => {
+    // Если есть блюда для этого дня
     if (menu[day] && menu[day].length) {
-      const dayBlock = document.createElement('div');
-      dayBlock.className = 'weekly-menu__day';
-      dayBlock.innerHTML = `<h3 class=\"weekly-menu__day-title\">${day.charAt(0).toUpperCase() + day.slice(1)}</h3>`;
-      menu[day].forEach((item, idx) => {
-        dayBlock.appendChild(createProductCard(item, idx));
+      // Обновляем каждое блюдо
+      menu[day].forEach(item => {
+        // Если есть доступная карточка, обновляем её
+        if (cardIndex < productCards.length) {
+          updateProductCard(productCards[cardIndex], item);
+          cardIndex++;
+        }
       });
-      container.appendChild(dayBlock);
     }
   });
+  
+  // Если блюд меньше, чем карточек, скрываем оставшиеся карточки
+  for (let i = cardIndex; i < productCards.length; i++) {
+    productCards[i].style.display = 'none';
+  }
 }
 
+// Entry script
 document.addEventListener('DOMContentLoaded', async () => {
+  console.log("App loaded");
+  
+  // Загрузка и рендеринг меню
   const menu = await fetchMenu();
   renderWeeklyMenu(menu);
-});
-// Entry script
-console.log("App loaded");
-
-document.querySelectorAll('.title').forEach(el => {
-  el.addEventListener('click', () => {
-    el.classList.toggle('active');
+  
+  // Добавление обработчиков событий
+  document.querySelectorAll('.title').forEach(el => {
+    el.addEventListener('click', () => {
+      el.classList.toggle('active');
+    });
   });
 });

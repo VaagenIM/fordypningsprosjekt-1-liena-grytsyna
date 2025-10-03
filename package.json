@@ -27,6 +27,7 @@
     "url": "https://github.com/VaagenIM/fordypningsprosjekt-1-liena-grytsyna/issues"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.36.0",
     "@eslint/json": "^0.13.2",
     "@parcel/transformer-sass": "^2.16.0",
