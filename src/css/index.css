@@ -828,6 +828,8 @@ body {
   color: #ffffff;
 }
 .footer--working-hours .time {
+  margin-top: 10px;
+  display: inline-block;
   color: #7f8096;
 }
 .footer__container {

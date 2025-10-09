@@ -37,8 +37,10 @@
 @use './styles/blocks/products' as *;
 
 // about us section
-@use './styles/blocks/section-about-us' as *;
+// @use './styles/blocks/section-about-us' as *;
 
 // footer
 @use './styles/blocks/footer' as *;
 @use './styles/blocks/footer-logo' as *;
+
+@use 'sass:color';

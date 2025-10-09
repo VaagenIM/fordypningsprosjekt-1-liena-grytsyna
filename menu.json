@@ -1,42 +1,42 @@
 {
   "monday": [
     {
-      "name": "Borch",
-      "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
-      "price": "800",
-      "image": "/assets/uploads/Grate-borsch_1_1_1ca4814e990d40a7a3ceef96cd917129.jpg"
+      "name": "SPICY GULROYSUPPE",
+      "description": "M/KORIANDER OG BRØD",
+      "price": "37",
+      "image": "/assets/uploads/P9150088_3bc4c27e1af348638e7758cee8396332.jpg"
     }
   ],
   "tuesday": [
     {
-      "name": "Borch",
-      "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
-      "price": "700",
-      "image": "/assets/uploads/Grate-borsch_1_1_eac61c94acba4f78bb48d016afde0a6a.jpg"
+      "name": "KYLLING CURRY WOK",
+      "description": "M/NUDLER",
+      "price": "43",
+      "image": "/assets/uploads/IMG_4031_3b8f5b458f8c4f93963cf219c2ac95f5.jpg"
     }
   ],
   "wednesday": [
     {
-      "name": "Borch",
-      "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
-      "price": "600",
-      "image": "/assets/uploads/Grate-borsch_1_1_74ea254eadc94c32a9aa070a94f445dc.jpg"
+      "name": "PASTAGRATENG",
+      "description": "M/BOLOGNAISE",
+      "price": "43",
+      "image": "/assets/uploads/greenbonanza-07-pasta-bolognese-med-tofu-3_70020e15bc204b0fb92791aff1283125.webp"
     }
   ],
   "thursday": [
     {
-      "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
-      "image": "/assets/uploads/Grate-borsch_1_1_f0f5fe5f22304bc38fef5b47f2f60dbf.jpg",
-      "name": "Borch",
-      "price": "670"
+      "name": "LAPSKAUS",
+      "description": "M/FLATBRØD",
+      "price": "40",
+      "image": "/assets/uploads/M-1448_bc8bacfea411466ca3347436dd090755.webp"
     }
   ],
   "friday": [
     {
-      "description": "Borsj er en tradisjonell ukrainsk supperett, som er vanlig å servere i store deler av Øst-Europa.",
-      "image": "/assets/uploads/Grate-borsch_1_1_4748f57ca925463bbdbb364a05cb7549.jpg",
-      "name": "Borch",
-      "price": "200"
+      "name": "CHILI CON CARNE",
+      "description": "M/RIS",
+      "price": "43",
+      "image": "/assets/uploads/Chili-Con-Carne-6-1_c0aa5460407f44c9a9949f83275e2d8d.jpg"
     }
   ]
 }

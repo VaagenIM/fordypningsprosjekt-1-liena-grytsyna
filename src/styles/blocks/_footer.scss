@@ -26,6 +26,8 @@
     }
 
     .time {
+      margin-top: 10px;
+      display: inline-block; // Add this line to make margin-top work
       color: #7f8096; // серый для времени
     }
   }

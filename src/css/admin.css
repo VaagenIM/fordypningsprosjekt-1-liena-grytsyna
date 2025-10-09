@@ -94,6 +94,59 @@
   gap: 10px;
 }
 
+.btn {
+  padding: 8px 15px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: rgb(11.5384615385, 124.0384615385, 213.4615384615);
+}
+.btn--primary {
+  padding: 8px 15px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.btn--primary:hover {
+  background-color: #ff3838;
+}
+.btn--success {
+  padding: 8px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.btn--success:hover {
+  background-color: rgb(60.5577689243, 139.4422310757, 63.7450199203);
+}
+.btn--danger {
+  padding: 8px 15px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.btn--danger:hover {
+  background-color: rgb(234.1839622642, 27.9622641509, 12.8160377358);
+}
+
 .edit-btn {
   padding: 8px 15px;
   background-color: #4caf50;
@@ -136,6 +189,62 @@
   background-color: rgb(11.5384615385, 124.0384615385, 213.4615384615);
 }
 
+.save-btn {
+  padding: 8px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.save-btn:hover {
+  background-color: rgb(60.5577689243, 139.4422310757, 63.7450199203);
+}
+
+.cancel-btn {
+  padding: 8px 15px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.cancel-btn:hover {
+  background-color: rgb(234.1839622642, 27.9622641509, 12.8160377358);
+}
+
+.primary-btn {
+  padding: 8px 15px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.primary-btn:hover {
+  background-color: #ff3838;
+}
+
+.secondary-btn {
+  padding: 8px 15px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.secondary-btn:hover {
+  background-color: rgb(11.5384615385, 124.0384615385, 213.4615384615);
+}
+
 .menu-item-form {
   padding: 20px;
   border: 1px solid #e0e0e0;
@@ -171,68 +280,12 @@
   gap: 10px;
 }
 
-.save-btn {
-  padding: 8px 15px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-.save-btn:hover {
-  background-color: rgb(60.5577689243, 139.4422310757, 63.7450199203);
-}
-
-.cancel-btn {
-  padding: 8px 15px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-.cancel-btn:hover {
-  background-color: rgb(234.1839622642, 27.9622641509, 12.8160377358);
-}
-
 .admin-actions {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
   margin-top: 30px;
-}
-
-.primary-btn {
-  padding: 8px 15px;
-  background-color: #ff6b6b;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-.primary-btn:hover {
-  background-color: #ff3838;
-}
-
-.secondary-btn {
-  padding: 8px 15px;
-  background-color: #2196f3;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-.secondary-btn:hover {
-  background-color: rgb(11.5384615385, 124.0384615385, 213.4615384615);
 }
 
 .image-input-container {
